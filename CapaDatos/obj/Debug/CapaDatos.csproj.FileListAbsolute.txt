@@ -1,0 +1,20 @@
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaDatos\obj\Debug\CapaDatos.pdb

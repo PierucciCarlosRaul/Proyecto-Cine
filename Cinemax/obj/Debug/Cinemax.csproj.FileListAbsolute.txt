@@ -1,0 +1,50 @@
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe.config
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.Properties.Resources.resources
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CopyComplete
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.exe
+C:\Users\User\Desktop\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe.config
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csprojResolveAssemblyReference.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.Properties.Resources.resources
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.GenerateResource.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CoreCompileInputs.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CopyComplete
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.exe
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.exe
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\Cinemax.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaPresentacion.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaLogica.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csprojAssemblyReference.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.Properties.Resources.resources
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.GenerateResource.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.csproj.CopyComplete
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.exe
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\Cinemax\obj\Debug\Cinemax.pdb

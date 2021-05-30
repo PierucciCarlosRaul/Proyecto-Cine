@@ -1,0 +1,29 @@
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.pdb
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\User\Desktop\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csprojResolveAssemblyReference.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.pdb
+C:\Users\Carlitos0917\Desktop\MIS COSAS\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaLogica.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.pdb
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\bin\Debug\CapaDatos.dll.config
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csprojAssemblyReference.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.dll
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaLogica\obj\Debug\CapaLogica.pdb
