@@ -40,10 +40,10 @@ C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debu
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
-C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Menu.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Peliculas.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Principal.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Personal.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.VistaCliente.resources
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.VistaComprobante.resources

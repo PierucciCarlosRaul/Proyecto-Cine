@@ -50,5 +50,10 @@ namespace CapaLogica
             Obj.Textobuscar = textobuscar;
             return Obj.BuscarComprobante(Obj);
         }
+
+        public static DataTable MostrarComprobantes()
+        {
+            return new Comprobante().MostrarComprobantes(); ;
+        }
     }
 }

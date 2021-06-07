@@ -174,5 +174,14 @@ namespace CapaPresentacion
         
         
         }
+
+        private void comprobanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ventas frm = Ventas.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.id_trabajador = Convert.ToInt32(this.id_personal);
+
+        }
     }
 }

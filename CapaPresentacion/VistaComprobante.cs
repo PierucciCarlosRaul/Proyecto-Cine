@@ -20,7 +20,7 @@ namespace CapaPresentacion
 
         private void VistaComprobante_Load(object sender, EventArgs e)
         {
-
+            MostrarComprobante();
         }
 
         private void OcultarColumnas()
@@ -32,22 +32,32 @@ namespace CapaPresentacion
         }
         private void MostrarComprobante()
         {
-            this.dataListado.DataSource = LComprobante.;
+            this.dataListado.DataSource = LComprobante.MostrarComprobantes();
             this.OcultarColumnas();
             lbltotal.Text = "Cant Clientes Registradas: " + Convert.ToString(dataListado.Rows.Count);
         }
 
 
-        private void Buscarcliente()
+        private void BuscarComprobante()
         {
-            this.dataListado.DataSource = LComprobante.(this.txtbuscar.Text);
+            this.dataListado.DataSource = LComprobante.BuscarComprobante(this.txtbuscar.Text);
             this.OcultarColumnas();
             lbltotal.Text = "Cant Clientes Registradas: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            this.Buscarcliente();
+            this.BuscarComprobante();
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            Ventas form = Ventas.GetInstancia();
+            string par1;
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["id_comprobante"].Value);
+            form.setComprobante(par1);
+            this.Hide();
+
         }
     }
 }

@@ -11,14 +11,13 @@ using System.Windows.Forms;
 using CapaLogica;
 namespace CapaPresentacion
 {
-    public partial class Ventas : Form
-    {
-        int ce;
-        double totalMonto, totadu, totmeno, totmayo, recaudacion, menores, adultos,res,
-        n1, n2, n3, sumaentrada, acuentrada, mayores, adu, meno, mayo, f, Au, aumento;
+    public partial class Ventas : Form{
+        private bool IsNuevo;
+        private DataTable dtDetalle;
         private static Ventas _instancia;
 
-        public static Ventas GetInstancia() {
+        public static Ventas GetInstancia()
+        {
 
             if (_instancia == null)
             {
@@ -26,6 +25,102 @@ namespace CapaPresentacion
             }
             return _instancia;
         }
+        public int id_trabajador;
+        int ce;
+        double totalMonto, totadu, totmeno, totmayo, recaudacion, menores, adultos,res,
+        n1, n2, n3, sumaentrada, acuentrada, mayores, adu, meno, mayo, f, Au, aumento;
+
+        private void chkeliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkeliminar.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == dataListado.Columns["eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ckbeliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["eliminar"];
+                ckbeliminar.Value = !Convert.ToBoolean(ckbeliminar.Value);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+           
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(true);
+            txtidcomprobante.Focus();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+          
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(false);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente Desea Eliminar los Registros", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string id_comprobante;
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow row in dataListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            id_comprobante = Convert.ToString(row.Cells[1].Value);
+                            Rpta = LComprobante.EliminarComprobante(Convert.ToInt32(id_comprobante));
+                        }
+                    }
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se Eliminó Correctamente el registro");
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+                    this.MostrarComprobante();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnbuscarcomprobante_Click(object sender, EventArgs e)
+        {
+            VistaComprobante cc= new VistaComprobante();
+            cc.ShowDialog();
+        }
+
+        private void btnBuscarcliente_Click(object sender, EventArgs e)
+        {
+            VistaCliente cv = new VistaCliente();
+            cv.ShowDialog();
+        }
+
+        
 
         public void setCliente(string id_cliente, string nombre) {
             this.txtidcliente.Text = id_cliente;
@@ -33,20 +128,139 @@ namespace CapaPresentacion
         
         }
 
-        public void setComprobante(string id_comprobante)
+        public void setComprobante(string comprobante)
         {
-            this.txtidcliente.Text = id_comprobante;
+            this.txtidecomprobante.Text = comprobante;
         }
 
 
         public Ventas()
         {
             InitializeComponent();
+            
+            this.ttMensajes.SetToolTip(this.txtidcomprobante, "Ingrese el Numero de comprobante");
+            this.ttMensajes.SetToolTip(this.txtidcliente, "Busque e ingrese el codigo del cliente ");
+            this.ttMensajes.SetToolTip(this.dtpfecha, "Ingrese la fecha de compra");
+            this.ttMensajes.SetToolTip(this.txtcliente, "Busque e ingrese los datos del cliente");
+            this.ttMensajes.SetToolTip(this.btnBuscarcliente, "Precione para obtener los datos cliente");
+            this.ttMensajes.SetToolTip(this.cmbPelicula, "Indique la pelicula seleccionada por el cliente");
+            this.ttMensajes.SetToolTip(this.cmbNroSala, "Indique el numero de sala para el cliente");
+            this.ttMensajes.SetToolTip(this.cmbTisala, "Indique el tipo de sala ");
+            
+            this.ttMensajes.SetToolTip(this.cmbPago, "Indique la forma de pago del cliente");
+            this.ttMensajes.SetToolTip(this.cmbCompra, "Indique la forma de compra de su cliente");
+            this.ttMensajes.SetToolTip(this.cmbNroButaca, "Indique el/los numeros de butacas a ocupar por el cliente");
+            this.ttMensajes.SetToolTip(this.cmbFuncion, "seleccione la funcion a la que asistira el cliente");
+            this.ttMensajes.SetToolTip(this.txtidecomprobante, "Seleccione el comprobante que pertenece a la compra que quiere realizar");
+            this.ttMensajes.SetToolTip(this.btnbuscarcomprobante, "Precione para obtener los datos del comprobante");
+
+
+            this.txtidcliente.Visible = false;
+            this.txtcliente.ReadOnly = true;
+            this.txtidecomprobante.Visible = false;
+        }
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Limpiar()
+        {
+            this.txtidcomprobante.Text = string.Empty;
+            this.txtidcliente.Text = string.Empty;
+            this.dtpfecha.Text = string.Empty;
+            this.txtcliente.Text = string.Empty;
+            this.cmbPelicula.Text = string.Empty;
+            this.cmbNroSala.Text = string.Empty;
+            this.cmbTisala.Text = string.Empty;
+            this.cmbPago.Text = string.Empty;
+            this.cmbCompra.Text = string.Empty;
+
+            this.cmbNroButaca.Text = string.Empty;
+            this.cmbFuncion.Text = string.Empty;
+            this.txtidecomprobante.Text = string.Empty;
+          }
+
+        private void Habilitar(bool valor)
+        {
+            // TEXT BOX
+            this.txtidcomprobante.ReadOnly = !valor;
+            this.txtidcliente.ReadOnly = !valor;
+            this.txtcliente.ReadOnly = !valor;
+            this.txtidecomprobante.ReadOnly = !valor;
+            // Combo Box
+            this.cmbPelicula.Enabled = valor;
+            this.cmbNroSala.Enabled = valor; 
+            this.cmbTisala.Enabled = valor;
+            this.cmbPago.Enabled = valor;
+            this.cmbCompra.Enabled = valor;
+            this.cmbNroButaca.Enabled = valor;
+            this.cmbFuncion.Enabled = valor;
+            //DATETIMEPICKET
+            this.dtpfecha.Enabled = valor;
+            //BOTONES
+            this.btnBuscarcliente.Enabled = valor;
+            this.btnbuscarcomprobante.Enabled = valor;
+        }
+
+        private void Botones()
+        {
+            if (this.IsNuevo)
+            {
+                this.Habilitar(true);
+                this.btnNuevo.Enabled = (false);
+                this.btnGuardar.Enabled = (true);
+                
+                this.btnCancelar.Enabled = (true);
+
+            }
+            else
+            {
+                this.Habilitar(false);
+                this.btnNuevo.Enabled = (true);
+                this.btnGuardar.Enabled = (false);
+                
+                this.btnCancelar.Enabled = (false);
+            }
+
+        }
+
+
+        private void OcultarColumnas()
+        {
+            this.dataListado.Columns[0].Visible = false;
+            // this.dataListado.Columns[1].Visible = false;
+            // this.datalistado.Columns[7].Visible = false;
+
+        }
+        private void MostrarComprobante()
+        {
+            this.dataListado.DataSource = LComprobante.MostrarComprobantes();
+            this.OcultarColumnas();
+            lbltotal.Text = "Cant Ventas Registradas: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+
+        private void BuscarComprobante()
+        {
+            this.dataListado.DataSource = LComprobante.BuscarComprobante(this.txtbuscar.Text);
+            this.OcultarColumnas();
+            lbltotal.Text = "Cant Ventas Registradas: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void Ventas_Load(object sender, EventArgs e)
         {
+            this.Top = 0;
+            this.Left = 0;
+            this.MostrarComprobante();
 
+            this.Habilitar(false);
+            this.Botones();
         }
         public void Sumar(TextBox uno, TextBox dos, TextBox tres, TextBox respu)
         {

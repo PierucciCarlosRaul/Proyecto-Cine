@@ -147,16 +147,16 @@ namespace CapaDatos
         }
 
 
-        public DataTable MostrarPelicula()
+        public DataTable MostrarComprobantes()
         {
-            DataTable DtResultado = new DataTable("Peliculas");
+            DataTable DtResultado = new DataTable("Comprobantes");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = conexion.CadenaConexion;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "Mostrarpeliculas";
+                SqlCmd.CommandText = "MostrarComprobante";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
