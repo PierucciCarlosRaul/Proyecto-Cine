@@ -25,14 +25,7 @@ namespace CapaDatos
         private int id_comprobante;
         private int res, n1, n2, n3;
 
-      /*  public void Sumar(TextBox uno, TextBox dos, TextBox tres, TextBox respu)
-        {
-            n1 = int.Parse(uno.Text);
-            n2 = int.Parse(dos.Text);
-            n3 = int.Parse(tres.Text);
-            res = n1 + n2 + n3;
-            respu.Text = res.ToString();
-        }*/
+    
 
         public Ddetalle_Comprobante(){}
 
@@ -40,6 +33,22 @@ namespace CapaDatos
         public int Id_detalle_comprobante { set { id_detalle_comprobante = value; } get { return id_detalle_comprobante; } }
         public double Monto { set { monto = value; } get { return monto; } }
         public double Descuento { set { descuento = value; } get { return descuento; } }
+
+        public void EnviarParametros(Ddetalle_Comprobante obj)
+        {
+            this.Monto = monto;
+            this.Descuento = descuento;
+            this.Id_funcion = id_funcion;
+            this.Id_butaca = id_butaca;
+            this.Id_tipo_compra = id_tipo_compra;
+            this.Cantidad = cantidad;
+            this.Id_pelicula = id_pelicula;
+            this.Id_forma_pago = id_forma_pago;
+            this.Id_sala = id_sala;
+            this.Id_tipo_sala = id_tipo_sala;
+            this.Id_comprobante = id_comprobante;
+        }
+
         public int Id_funcion { set { id_funcion = value; } get { return id_funcion; } }
         public int Id_butaca { set { id_butaca = value; } get { return id_butaca; } }
         public int Id_tipo_compra { set { id_tipo_compra = value; } get { return id_tipo_compra; } }
@@ -70,19 +79,23 @@ namespace CapaDatos
             this.Id_tipo_sala = id_tipo_sala;
             this.Id_comprobante = id_comprobante;
         }
+        
+        public double calcularmonto()
+        {
+            return 350;
+        }
 
         public string Insertar_Detalle_Comprobante(Ddetalle_Comprobante dcomprobante,
         ref SqlConnection sqlcon, ref SqlTransaction sqlTra)
         {
-
             string rpta = "";
-           
             try
             {
                 sqlcon.ConnectionString = conexion.CadenaConexion;
                 sqlcon.Open();
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.Connection = sqlcon;
+                sqlcmd.Transaction = sqlTra;
                 sqlcmd.CommandText = "Insertar_Detalle_Comprobante";
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 

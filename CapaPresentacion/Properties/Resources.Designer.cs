@@ -143,6 +143,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lupa {
+            get {
+                object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pe {
             get {
                 object obj = ResourceManager.GetObject("pe", resourceCulture);
@@ -156,6 +166,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap pe2 {
             get {
                 object obj = ResourceManager.GetObject("pe2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search32x32 {
+            get {
+                object obj = ResourceManager.GetObject("search32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

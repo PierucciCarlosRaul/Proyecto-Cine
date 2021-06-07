@@ -47,6 +47,7 @@
     <Compile Include="Lclasificacion.cs" />
     <Compile Include="LClientes.cs" />
     <Compile Include="LComprobante.cs" />
+    <Compile Include="LDetalle_Comprobante.cs" />
     <Compile Include="Lgenero.cs" />
     <Compile Include="Lidioma.cs" />
     <Compile Include="LPelicula.cs" />

@@ -86,6 +86,24 @@
     <Compile Include="Registrar Clientes.Designer.cs">
       <DependentUpon>Registrar Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaCliente.Designer.cs">
+      <DependentUpon>VistaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaComprobante.Designer.cs">
+      <DependentUpon>VistaComprobante.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
@@ -115,6 +133,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar Clientes.resx">
       <DependentUpon>Registrar Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaCliente.resx">
+      <DependentUpon>VistaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaComprobante.resx">
+      <DependentUpon>VistaComprobante.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cine-5-e1585960007845.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

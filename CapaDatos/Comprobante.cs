@@ -15,20 +15,25 @@ namespace CapaDatos
         private DateTime fecha;
         private int id_personal;
         private int id_cliente;
+        private string textobuscar;
+
 
         public int Id_comprobante { get => id_comprobante; set => id_comprobante = value; }
         public int Id_personal { get => id_personal; set => id_personal = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public int Id_cliente { get => id_cliente; set => id_cliente = value; }
 
+        public string Textobuscar { get => textobuscar; set => textobuscar = value; }
+
         public Comprobante() { }
 
-        public Comprobante(int id_comprobante, DateTime fecha,int id_personal, int id_cliente) {
+        public Comprobante(int id_comprobante, DateTime fecha,int id_personal, int id_cliente, string textobuscar) {
 
             this.Id_comprobante = id_comprobante;
             this.Fecha = fecha;
             this.Id_personal = id_personal;
             this.Id_cliente = id_cliente;
+            this.Textobuscar = textobuscar;
         }
 
         public string Insertar_Comprobante(Comprobante comprobante, List<Ddetalle_Comprobante> detalle)
@@ -141,6 +146,59 @@ namespace CapaDatos
 
         }
 
+
+        public DataTable MostrarPelicula()
+        {
+            DataTable DtResultado = new DataTable("Peliculas");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrarpeliculas";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        public DataTable BuscarComprobante(Comprobante comprobante)
+        {
+            DataTable DtResultado = new DataTable("Comprobantes");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BuscarComprobante";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 70;
+                ParTextoBuscar.Value = comprobante.Textobuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
 
 
 

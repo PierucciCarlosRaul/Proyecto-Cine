@@ -18,7 +18,7 @@ namespace Cinemax
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registrar_Clientes());
+            Application.Run(new Ventas());
         }
     }
 }
