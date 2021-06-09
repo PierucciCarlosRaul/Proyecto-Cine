@@ -155,10 +155,74 @@ namespace CapaPresentacion
             this.ttMensajes.SetToolTip(this.btnbuscarcomprobante, "Precione para obtener los datos del comprobante");
 
 
-            this.txtidcliente.Visible = false;
+         /*   this.txtidcliente.Visible = false;
             this.txtcliente.ReadOnly = true;
-            this.txtidecomprobante.Visible = false;
+            this.txtidecomprobante.ReadOnly = false;*/
+
+            this.LlenarComboFuncion();
+            this.LlenarComboButaca();
+            this.LlenarComboTipoCompra();
+            this.LlenarComboPelicula();
+            this.LlenarComboFormaPago();
+            this.LlenarComboNroSalas();
+            this.LlenarComboTipoSalas();
         }
+
+        private void LlenarComboTipoSalas()
+        {
+            cmbTisala.DataSource = LtipoSala.MostrarTipoSala();
+            cmbTisala.ValueMember = "id_tipo_sala";
+            cmbTisala.DisplayMember = "tipo_sala";
+        }
+
+        private void LlenarComboNroSalas()
+        {
+            cmbNroSala.DataSource = LcomboSala.MostrarComboSala();
+            cmbNroSala.ValueMember = "id_sala";
+            cmbNroSala.DisplayMember = "nro_sala";
+        }
+
+        private void LlenarComboFormaPago()
+        {
+            cmbPago.DataSource = LcomboPago.MostrarComboPago(); 
+            cmbPago.ValueMember = "id_forma_pago";
+            cmbPago.DisplayMember = "forma_pago";
+        }
+        private void LlenarComboPelicula()
+        {
+            cmbPelicula.DataSource = LcomboPelicula.MostrarComboPelicula();
+            cmbPelicula.ValueMember = "id_pelicula";
+            cmbPelicula.DisplayMember = "nombre";
+        }
+
+
+        private void LlenarComboTipoCompra()
+        {
+            cmbCompra.DataSource = LTipo_Compra.MostrarTipo_Compra();
+            cmbCompra.ValueMember = "id_tipo_compra";
+            cmbCompra.DisplayMember = "tipo_compra";
+        }
+
+        private void LlenarComboButaca()
+        {
+            cmbNroButaca.DataSource = LButaca.MostrarButacas();
+            cmbNroButaca.ValueMember = "id_butaca";
+            cmbNroButaca.DisplayMember = "nro_butaca";
+        }
+
+
+        private void LlenarComboFuncion()
+        {
+            cmbFuncion.DataSource = LFuncion.MostrarFuncion();
+            cmbFuncion.ValueMember = "id_funcion";
+            cmbFuncion.DisplayMember = "fecha y hora";
+        }
+
+
+
+
+
+
         private void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);

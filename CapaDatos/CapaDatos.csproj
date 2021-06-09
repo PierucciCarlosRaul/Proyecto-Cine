@@ -44,16 +44,23 @@
     <Compile Include="Comprobante.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="DBarrio.cs" />
+    <Compile Include="DButacas.cs" />
     <Compile Include="Dcalificacion.cs" />
     <Compile Include="Dclasificacion.cs" />
     <Compile Include="DClientes.cs" />
+    <Compile Include="DcomboPago.cs" />
+    <Compile Include="DComboPelicula.cs" />
+    <Compile Include="DcomboSala.cs" />
     <Compile Include="Ddetalle_Comprobante.cs" />
+    <Compile Include="DFuncion.cs" />
     <Compile Include="Dgenero.cs" />
     <Compile Include="Didioma.cs" />
     <Compile Include="DPelicula.cs" />
     <Compile Include="Dpersonal.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DTipocliente.cs" />
+    <Compile Include="DtipoSala.cs" />
+    <Compile Include="DTipo_Compra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

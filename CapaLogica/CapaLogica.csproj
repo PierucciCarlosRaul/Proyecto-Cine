@@ -43,17 +43,24 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="LBarrio.cs" />
+    <Compile Include="LButaca.cs" />
     <Compile Include="Lcalificacion.cs" />
     <Compile Include="Lclasificacion.cs" />
     <Compile Include="LClientes.cs" />
+    <Compile Include="LcomboPago.cs" />
+    <Compile Include="LcomboPelicula.cs" />
+    <Compile Include="LcomboSala.cs" />
     <Compile Include="LComprobante.cs" />
     <Compile Include="LDetalle_Comprobante.cs" />
+    <Compile Include="LFuncion.cs" />
     <Compile Include="Lgenero.cs" />
     <Compile Include="Lidioma.cs" />
     <Compile Include="LPelicula.cs" />
     <Compile Include="Lpersonal.cs" />
     <Compile Include="LSexo.cs" />
     <Compile Include="LTipocliente.cs" />
+    <Compile Include="LtipoSala.cs" />
+    <Compile Include="LTipo_Compra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
