@@ -183,5 +183,11 @@ namespace CapaPresentacion
             frm.id_trabajador = Convert.ToInt32(this.id_personal);
 
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registrar_Clientes frm = new Registrar_Clientes();
+            frm.Show();
+        }
     }
 }

@@ -286,13 +286,13 @@ namespace CapaPresentacion
         private void datalistado_DoubleClick(object sender, EventArgs e)
         {
             
-            this.txtid.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["id_cliente"].Value);
-            this.txtnombre.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["nombre"].Value);
-            this.txtdni.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["dni"].Value);
-            this.cmbBarrios.SelectedValue = Convert.ToString(this.datalistado.CurrentRow.Cells["id_barrio"].Value);
-            this.cmbCliente.SelectedValue = Convert.ToString(this.datalistado.CurrentRow.Cells["id_tipos_cliente"].Value);
-            this.txtTelefono.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["telefono"].Value);
-            this.txtEmail.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["email"].Value);
+            this.txtid.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Codigo"].Value);
+            this.txtnombre.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Nombre cliente"].Value);
+            this.txtdni.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Documento"].Value);
+            this.cmbBarrios.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Barrio"].Value);
+            this.cmbCliente.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Tipo de Cliente"].Value);
+            this.txtTelefono.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Telefono"].Value);
+            this.txtEmail.Text = Convert.ToString(this.datalistado.CurrentRow.Cells["Correo Electronico"].Value);
             btnEditar.Enabled = true;
              MessageBox.Show("Para editar los datos presione en el boton Editar realize los cambios y luego precione en cargar cliente");
             //  this.tabControl1.SelectedIndex = 1;

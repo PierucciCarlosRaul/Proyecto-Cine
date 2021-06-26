@@ -54,8 +54,8 @@ namespace CapaPresentacion
         {
             Ventas form = Ventas.GetInstancia();
             string par1, par2;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["id_cliente"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Codigo"].Value);
+            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre cliente"].Value);
             form.setCliente(par1, par2);
             this.Hide();
         }

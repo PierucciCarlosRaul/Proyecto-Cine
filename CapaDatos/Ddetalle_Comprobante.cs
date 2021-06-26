@@ -85,7 +85,7 @@ namespace CapaDatos
             return 350;
         }
 
-        public string Insertar_Detalle_Comprobante(Ddetalle_Comprobante dcomprobante,
+        public string InsertarDetalleComprobante(Ddetalle_Comprobante dcomprobante,
         ref SqlConnection sqlcon, ref SqlTransaction sqlTra)
         {
             string rpta = "";

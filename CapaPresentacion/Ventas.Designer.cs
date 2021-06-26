@@ -32,12 +32,9 @@ namespace CapaPresentacion
             this.components = new System.ComponentModel.Container();
             this.ttMensajes = new System.Windows.Forms.ToolTip(this.components);
             this.Erroricono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtidcomprobante = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarcliente = new System.Windows.Forms.Button();
             this.txtidcliente = new System.Windows.Forms.TextBox();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.txtcliente = new System.Windows.Forms.TextBox();
@@ -55,13 +52,13 @@ namespace CapaPresentacion
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.btnbuscarcomprobante = new System.Windows.Forms.Button();
             this.txtidecomprobante = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.lbltotentradas = new System.Windows.Forms.Label();
@@ -120,11 +117,10 @@ namespace CapaPresentacion
             this.label8 = new System.Windows.Forms.Label();
             this.cmbPelicula = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnbuscarcomprobante = new System.Windows.Forms.Button();
+            this.BtnEliminarcomp = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscarcliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Erroricono)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -141,23 +137,6 @@ namespace CapaPresentacion
             // Erroricono
             // 
             this.Erroricono.ContainerControl = this;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Nº Comprobante";
-            // 
-            // txtidcomprobante
-            // 
-            this.txtidcomprobante.Location = new System.Drawing.Point(101, 33);
-            this.txtidcomprobante.Name = "txtidcomprobante";
-            this.txtidcomprobante.ReadOnly = true;
-            this.txtidcomprobante.Size = new System.Drawing.Size(100, 20);
-            this.txtidcomprobante.TabIndex = 20;
             // 
             // btnEditar
             // 
@@ -179,8 +158,8 @@ namespace CapaPresentacion
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtidcomprobante);
+            this.groupBox1.Controls.Add(this.BtnEliminarcomp);
+            this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnBuscarcliente);
             this.groupBox1.Controls.Add(this.txtidcliente);
             this.groupBox1.Controls.Add(this.dtpfecha);
@@ -188,25 +167,15 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(994, 113);
+            this.groupBox1.Size = new System.Drawing.Size(994, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // btnBuscarcliente
-            // 
-            this.btnBuscarcliente.Image = global::CapaPresentacion.Properties.Resources.search32x32;
-            this.btnBuscarcliente.Location = new System.Drawing.Point(701, 24);
-            this.btnBuscarcliente.Name = "btnBuscarcliente";
-            this.btnBuscarcliente.Size = new System.Drawing.Size(47, 36);
-            this.btnBuscarcliente.TabIndex = 11;
-            this.btnBuscarcliente.UseVisualStyleBackColor = true;
-            this.btnBuscarcliente.Click += new System.EventHandler(this.btnBuscarcliente_Click);
-            // 
             // txtidcliente
             // 
-            this.txtidcliente.Location = new System.Drawing.Point(410, 33);
+            this.txtidcliente.Location = new System.Drawing.Point(209, 35);
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(34, 20);
             this.txtidcliente.TabIndex = 3;
@@ -214,14 +183,14 @@ namespace CapaPresentacion
             // dtpfecha
             // 
             this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpfecha.Location = new System.Drawing.Point(250, 33);
+            this.dtpfecha.Location = new System.Drawing.Point(49, 35);
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(112, 20);
             this.dtpfecha.TabIndex = 2;
             // 
             // txtcliente
             // 
-            this.txtcliente.Location = new System.Drawing.Point(504, 32);
+            this.txtcliente.Location = new System.Drawing.Point(303, 34);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Size = new System.Drawing.Size(182, 20);
             this.txtcliente.TabIndex = 1;
@@ -229,7 +198,7 @@ namespace CapaPresentacion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(386, 36);
+            this.label5.Location = new System.Drawing.Point(185, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 3;
@@ -238,7 +207,7 @@ namespace CapaPresentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(207, 36);
+            this.label4.Location = new System.Drawing.Point(6, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 2;
@@ -247,7 +216,7 @@ namespace CapaPresentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(459, 36);
+            this.label3.Location = new System.Drawing.Point(258, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 1;
@@ -367,11 +336,7 @@ namespace CapaPresentacion
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.btnNuevo);
             this.tabPage2.Controls.Add(this.btnGuardar);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btnEditar);
-            this.tabPage2.Controls.Add(this.label45);
-            this.tabPage2.Controls.Add(this.label29);
-            this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -379,6 +344,16 @@ namespace CapaPresentacion
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(398, 446);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 103;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCalcular
             // 
@@ -456,7 +431,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbPelicula);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(6, 137);
+            this.groupBox2.Location = new System.Drawing.Point(15, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(980, 274);
             this.groupBox2.TabIndex = 11;
@@ -498,16 +473,6 @@ namespace CapaPresentacion
             this.label55.Size = new System.Drawing.Size(84, 13);
             this.label55.TabIndex = 155;
             this.label55.Text = "Entrada Gral  $  ";
-            // 
-            // btnbuscarcomprobante
-            // 
-            this.btnbuscarcomprobante.Image = global::CapaPresentacion.Properties.Resources.search32x32;
-            this.btnbuscarcomprobante.Location = new System.Drawing.Point(456, 92);
-            this.btnbuscarcomprobante.Name = "btnbuscarcomprobante";
-            this.btnbuscarcomprobante.Size = new System.Drawing.Size(47, 36);
-            this.btnbuscarcomprobante.TabIndex = 153;
-            this.btnbuscarcomprobante.UseVisualStyleBackColor = true;
-            this.btnbuscarcomprobante.Click += new System.EventHandler(this.btnbuscarcomprobante_Click);
             // 
             // txtidecomprobante
             // 
@@ -1016,51 +981,44 @@ namespace CapaPresentacion
             this.label9.TabIndex = 49;
             this.label9.Text = "Pelicula";
             // 
-            // label11
+            // btnbuscarcomprobante
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(718, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 100;
-            this.label11.Text = "0";
+            this.btnbuscarcomprobante.Image = global::CapaPresentacion.Properties.Resources.search32x32;
+            this.btnbuscarcomprobante.Location = new System.Drawing.Point(456, 92);
+            this.btnbuscarcomprobante.Name = "btnbuscarcomprobante";
+            this.btnbuscarcomprobante.Size = new System.Drawing.Size(47, 36);
+            this.btnbuscarcomprobante.TabIndex = 153;
+            this.btnbuscarcomprobante.UseVisualStyleBackColor = true;
+            this.btnbuscarcomprobante.Click += new System.EventHandler(this.btnbuscarcomprobante_Click);
             // 
-            // label45
+            // BtnEliminarcomp
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(605, 89);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(111, 13);
-            this.label45.TabIndex = 101;
-            this.label45.Text = "Menores/Mayores  $  ";
+            this.BtnEliminarcomp.Image = global::CapaPresentacion.Properties.Resources._7864;
+            this.BtnEliminarcomp.Location = new System.Drawing.Point(628, 29);
+            this.BtnEliminarcomp.Name = "BtnEliminarcomp";
+            this.BtnEliminarcomp.Size = new System.Drawing.Size(35, 31);
+            this.BtnEliminarcomp.TabIndex = 28;
+            this.BtnEliminarcomp.UseVisualStyleBackColor = true;
             // 
-            // label29
+            // btnAgregar
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(570, 89);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(13, 13);
-            this.label29.TabIndex = 78;
-            this.label29.Text = "0";
+            this.btnAgregar.Image = global::CapaPresentacion.Properties.Resources._456;
+            this.btnAgregar.Location = new System.Drawing.Point(567, 29);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(35, 31);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // label30
+            // btnBuscarcliente
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(485, 89);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(84, 13);
-            this.label30.TabIndex = 59;
-            this.label30.Text = "Entrada Gral  $  ";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(398, 446);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 103;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnBuscarcliente.Image = global::CapaPresentacion.Properties.Resources.search32x32;
+            this.btnBuscarcliente.Location = new System.Drawing.Point(491, 26);
+            this.btnBuscarcliente.Name = "btnBuscarcliente";
+            this.btnBuscarcliente.Size = new System.Drawing.Size(47, 36);
+            this.btnBuscarcliente.TabIndex = 11;
+            this.btnBuscarcliente.UseVisualStyleBackColor = true;
+            this.btnBuscarcliente.Click += new System.EventHandler(this.btnBuscarcliente_Click);
             // 
             // Ventas
             // 
@@ -1082,7 +1040,6 @@ namespace CapaPresentacion
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -1104,8 +1061,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtidcomprobante;
         private System.Windows.Forms.Button btnBuscarcliente;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
@@ -1176,15 +1131,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbPelicula;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button BtnEliminarcomp;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

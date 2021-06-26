@@ -59,10 +59,10 @@ namespace CapaPresentacion
             this.ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprobanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultas = new System.Windows.Forms.ToolStripMenuItem();
             this.adminpersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprobanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -248,7 +248,7 @@ namespace CapaPresentacion
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -263,7 +263,7 @@ namespace CapaPresentacion
             // cargarPeliculasToolStripMenuItem
             // 
             this.cargarPeliculasToolStripMenuItem.Name = "cargarPeliculasToolStripMenuItem";
-            this.cargarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.cargarPeliculasToolStripMenuItem.Text = "Cargar Peliculas";
             this.cargarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.cargarPeliculasToolStripMenuItem_Click);
             // 
@@ -289,6 +289,14 @@ namespace CapaPresentacion
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // comprobanteToolStripMenuItem
+            // 
+            this.comprobanteToolStripMenuItem.Name = "comprobanteToolStripMenuItem";
+            this.comprobanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comprobanteToolStripMenuItem.Text = "Comprobante";
+            this.comprobanteToolStripMenuItem.Click += new System.EventHandler(this.comprobanteToolStripMenuItem_Click);
             // 
             // consultas
             // 
@@ -307,16 +315,9 @@ namespace CapaPresentacion
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.personalToolStripMenuItem.Text = "Personal";
             this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
-            // 
-            // comprobanteToolStripMenuItem
-            // 
-            this.comprobanteToolStripMenuItem.Name = "comprobanteToolStripMenuItem";
-            this.comprobanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.comprobanteToolStripMenuItem.Text = "Comprobante";
-            this.comprobanteToolStripMenuItem.Click += new System.EventHandler(this.comprobanteToolStripMenuItem_Click);
             // 
             // Principal
             // 

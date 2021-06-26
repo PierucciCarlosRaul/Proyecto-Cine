@@ -36,7 +36,7 @@ namespace CapaDatos
             this.Textobuscar = textobuscar;
         }
 
-        public string Insertar_Comprobante(Comprobante comprobante, List<Ddetalle_Comprobante> detalle)
+        public string Insertar_Comprobante(Comprobante comprobante)
        {
             string rpta = "";
             SqlConnection sqlcon = new SqlConnection();
@@ -44,18 +44,12 @@ namespace CapaDatos
             {
                 sqlcon.ConnectionString = conexion.CadenaConexion;
                 sqlcon.Open();
-                SqlTransaction SqlTra = sqlcon.BeginTransaction();
+
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.Connection = sqlcon;
-                sqlcmd.Transaction = SqlTra;
+
                 sqlcmd.CommandText = "Insertar_Comprobante";
                 sqlcmd.CommandType = CommandType.StoredProcedure;
-                
-                SqlParameter parid_comprobante = new SqlParameter();
-                parid_comprobante.ParameterName = "@id_comprobante";
-                parid_comprobante.SqlDbType = SqlDbType.Int;
-                parid_comprobante.Direction = ParameterDirection.Output;
-                sqlcmd.Parameters.Add(parid_comprobante);
 
                 SqlParameter parfecha = new SqlParameter();
                 parfecha.ParameterName = "@fecha";
@@ -66,38 +60,21 @@ namespace CapaDatos
 
                 SqlParameter parpersonal = new SqlParameter();
                 parpersonal.ParameterName = "@id_personal";
-                parpersonal.SqlDbType = SqlDbType.Date;
+                parpersonal.SqlDbType = SqlDbType.Int;
                 parpersonal.Value = comprobante.Id_personal;
                 sqlcmd.Parameters.Add(parpersonal);
 
                 SqlParameter parcliente = new SqlParameter();
                 parcliente.ParameterName = "@id_cliente";
-                parcliente.SqlDbType = SqlDbType.Date;
+                parcliente.SqlDbType = SqlDbType.Int;
                 parcliente.Value = comprobante.Id_cliente;
                 sqlcmd.Parameters.Add(parcliente);
-                
+
                 rpta = sqlcmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
 
-                if (rpta.Equals("OK"))
-                {
-                    this.Id_comprobante = Convert.ToInt32(sqlcmd.Parameters["@id_comprobante"]);
-                    foreach (Ddetalle_Comprobante det in detalle) 
-                    {
-                        det.Id_comprobante = this.Id_comprobante;
-                        rpta = det.Insertar_Detalle_Comprobante(det, ref sqlcon, ref SqlTra);
-                        if (!rpta.Equals("OK"))
-                        {
-                            break;
-                        }
-                    }
-                }
-                if (rpta.Equals("OK"))
-                {
-                    SqlTra.Commit();
-                }
-                else { SqlTra.Rollback(); }
-
+                
             }
+
             catch (Exception ex)
             {
                 rpta = ex.Message;
