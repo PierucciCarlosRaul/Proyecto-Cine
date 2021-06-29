@@ -24,31 +24,17 @@ namespace CapaDatos
         private int id_tipo_sala;
         private int id_comprobante;
         private int res, n1, n2, n3;
+        private string textobuscar;
 
     
 
         public Ddetalle_Comprobante(){}
 
 
+
         public int Id_detalle_comprobante { set { id_detalle_comprobante = value; } get { return id_detalle_comprobante; } }
         public double Monto { set { monto = value; } get { return monto; } }
         public double Descuento { set { descuento = value; } get { return descuento; } }
-
-        public void EnviarParametros(Ddetalle_Comprobante obj)
-        {
-            this.Monto = monto;
-            this.Descuento = descuento;
-            this.Id_funcion = id_funcion;
-            this.Id_butaca = id_butaca;
-            this.Id_tipo_compra = id_tipo_compra;
-            this.Cantidad = cantidad;
-            this.Id_pelicula = id_pelicula;
-            this.Id_forma_pago = id_forma_pago;
-            this.Id_sala = id_sala;
-            this.Id_tipo_sala = id_tipo_sala;
-            this.Id_comprobante = id_comprobante;
-        }
-
         public int Id_funcion { set { id_funcion = value; } get { return id_funcion; } }
         public int Id_butaca { set { id_butaca = value; } get { return id_butaca; } }
         public int Id_tipo_compra { set { id_tipo_compra = value; } get { return id_tipo_compra; } }
@@ -58,13 +44,14 @@ namespace CapaDatos
         public int Id_sala { set { id_sala = value; } get { return id_sala; } }
         public int Id_tipo_sala { set { id_tipo_sala = value; } get { return id_tipo_sala; } }
         public int Id_comprobante { set { id_comprobante = value; } get { return id_comprobante; } }
-       
+        public string Textobuscar { set { textobuscar = value; } get { return textobuscar; } }
+
 
 
 
         public Ddetalle_Comprobante(int id_detalle_comprobante, double monto, double descuento, 
             int id_funcion, int id_butaca, int id_tipo_compra, int cantidad, int id_pelicula,
-            int id_forma_pago, int id_sala, int id_tipo_sala, int id_comprobante) {
+            int id_forma_pago, int id_sala, int id_tipo_sala, int id_comprobante, string textobuscar) {
 
             this.Id_detalle_comprobante = id_detalle_comprobante;
             this.Monto = monto;
@@ -78,6 +65,7 @@ namespace CapaDatos
             this.Id_sala = id_sala;
             this.Id_tipo_sala = id_tipo_sala;
             this.Id_comprobante = id_comprobante;
+            this.Textobuscar = textobuscar;
         }
         
         public double calcularmonto()
@@ -85,20 +73,77 @@ namespace CapaDatos
             return 350;
         }
 
-        public string InsertarDetalleComprobante(Ddetalle_Comprobante dcomprobante,
-        ref SqlConnection sqlcon, ref SqlTransaction sqlTra)
+
+        public DataTable Mostrar_Detalle_Comprobante()
+        {
+            DataTable DtResultado = new DataTable("Detalle_Comprobantes");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Mostrar_Detalle_Comprobante";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        public DataTable BuscarDetalle(Ddetalle_Comprobante detalle)
+        {
+            DataTable DtResultado = new DataTable("Detalle_Comprobantes");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "Buscar_Detalle_Comprobante";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 70;
+                ParTextoBuscar.Value = detalle.Textobuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+
+
+
+        public string InsertarDetalleComprobante(Ddetalle_Comprobante dcomprobante
+       )
         {
             string rpta = "";
+            SqlConnection sqlcon = new SqlConnection();
             try
             {
                 sqlcon.ConnectionString = conexion.CadenaConexion;
                 sqlcon.Open();
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.Connection = sqlcon;
-                sqlcmd.Transaction = sqlTra;
                 sqlcmd.CommandText = "Insertar_Detalle_Comprobante";
                 sqlcmd.CommandType = CommandType.StoredProcedure;
-
+               
                 SqlParameter parid_detalle_comprobante = new SqlParameter();
                 parid_detalle_comprobante.ParameterName = "@id_detalle_comprobante";
                 parid_detalle_comprobante.SqlDbType = SqlDbType.Int;
@@ -181,11 +226,8 @@ namespace CapaDatos
             {
                 if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
             }
+
             return rpta;
         }
-
-
-
-
     }
 }

@@ -54,7 +54,7 @@ namespace CapaPresentacion
         {
             Ventas form = Ventas.GetInstancia();
             string par1;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["id_comprobante"].Value);
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["ID"].Value);
             form.setComprobante(par1);
             this.Hide();
 

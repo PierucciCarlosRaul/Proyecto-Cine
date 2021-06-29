@@ -58,8 +58,10 @@ namespace CapaPresentacion
            
             this.Botones();
             this.Limpiar();
-            this.Habilitar(true);
             dtpfecha.Focus();
+            this.Habilitar1(true);
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -132,10 +134,7 @@ namespace CapaPresentacion
         {
             this.txtidecomprobante.Text = comprobante;
         }
-
-       
-
-
+        
         public Ventas()
         {
             InitializeComponent();
@@ -156,11 +155,6 @@ namespace CapaPresentacion
             this.ttMensajes.SetToolTip(this.txtidecomprobante, "Seleccione el comprobante que pertenece a la compra que quiere realizar");
             this.ttMensajes.SetToolTip(this.btnbuscarcomprobante, "Precione para obtener los datos del comprobante");
 
-
-            /*   this.txtidcliente.Visible = false;
-               this.txtcliente.ReadOnly = true;
-               this.txtidecomprobante.ReadOnly = false;*/
-
             this.LlenarComboFuncion();
             this.LlenarComboButaca();
             this.LlenarComboTipoCompra();
@@ -168,27 +162,26 @@ namespace CapaPresentacion
             this.LlenarComboFormaPago();
             this.LlenarComboNroSalas();
             this.LlenarComboTipoSalas();
-
-
-            
-
         }
 
-        private void LlenarComboTipoSalas()
+         
+
+
+
+
+private void LlenarComboTipoSalas()
         {
             cmbTisala.DataSource = LtipoSala.MostrarTipoSala();
             cmbTisala.ValueMember = "id_tipo_sala";
             cmbTisala.DisplayMember = "tipo_sala";
         }
-
-      
-
+        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
                 String rpta = "";
-                if (this.txtidcliente.Text == string.Empty)
+                if (this.txtidcliente.Text == string.Empty || this.txtcliente.Text == string.Empty)
                 {
                     MensajeError("Faltan ingresar datos, seran marcados");
                     Erroricono.SetError(txtidcliente, "Ingrese el cliente");
@@ -209,25 +202,23 @@ namespace CapaPresentacion
                         {
                             this.MensajeOk("Se Registro de manera correcta");
                         }
-                      
+                        this.Habilitar(true);
+                        this.Habilitar1(false);
                     }
                     else
                     {
 
                         this.MensajeError(rpta);
                     }
-
-                    this.IsNuevo = false;
-      
-                    this.Botones();
-                    this.Limpiar();
-                   
-                }
+                
+               }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+
+         
         }
 
         private void txtidcomprobante_TextChanged(object sender, EventArgs e)
@@ -235,11 +226,103 @@ namespace CapaPresentacion
             
         }
 
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtidecomprobante.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["id_comprobante"].Value);
+            this.dtpfecha.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha"].Value);
+            this.txtidcliente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["id_cliente"].Value);
+            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rpta = "";
+                if (this.txtidcliente.Text == string.Empty || this.txtcliente.Text == string.Empty 
+                   ||this.cmbPelicula.ValueMember == string.Empty || this.cmbNroSala.ValueMember == string.Empty 
+                   || this.cmbTisala.ValueMember == string.Empty || this.cmbPago.ValueMember == string.Empty
+                   || this.cmbCompra.ValueMember == string.Empty || this.cmbNroButaca.ValueMember == string.Empty 
+                   || this.cmbFuncion.ValueMember == string.Empty || this.txtidecomprobante.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                    Erroricono.SetError(txtidcliente, "Ingrese el Codigo de comprobante del cliente");
+                    Erroricono.SetError(txtcliente, "Ingrese Nombre del cliente");
+                    Erroricono.SetError(cmbPelicula, "Ingrese La pelicula elegida por el cliente");
+                    Erroricono.SetError(cmbNroSala, "Ingrese La Sala");
+                    Erroricono.SetError(cmbTisala, "Ingrese Tipo de Sala");
+                    Erroricono.SetError(cmbPago, "Ingrese Forma de Pago");
+                    Erroricono.SetError(cmbCompra, "Ingrese Tipo de Compra");
+                    Erroricono.SetError(cmbNroButaca, "Ingrese Nro de Butaca");
+                    Erroricono.SetError(cmbFuncion, "Seleccione la funcion");
+                    Erroricono.SetError(txtidecomprobante, "Ingrese El codigo del comprobante");
+                }
+                if (this.IsNuevo)
+                {
+                    rpta = LDetalle_Comprobante.Insertar_Detalle_Comprobante(
+                        Convert.ToDouble(this.txttotalventa.Text),
+                        Convert.ToDouble(this.txtDes.Text),
+                        Convert.ToInt32(this.cmbFuncion.SelectedValue),
+                        Convert.ToInt32(this.cmbNroButaca.SelectedValue),
+                        Convert.ToInt32(this.cmbCompra.SelectedValue),
+                        Convert.ToInt32(this.textBox6.Text),
+                        Convert.ToInt32(this.cmbPelicula.SelectedValue),
+                          Convert.ToInt32(this.cmbPago.SelectedValue),
+                        Convert.ToInt32(this.cmbNroSala.SelectedValue),
+                        Convert.ToInt32(this.cmbTisala.SelectedValue),
+                        Convert.ToInt32(this.txtidecomprobante.Text));
+
+                }
+               
+
+                if (rpta.Equals("OK"))
+                {
+                    if (this.IsNuevo)
+                    {
+                        this.MensajeOk("Se Insertó de forma correcta el registro");
+                        this.Habilitar(false);
+                        this.Habilitar1(false);
+                        this.Limpiar();
+                        btnNuevo.Enabled = true;
+                        btnGuardar.Enabled = false;
+                    }
+                   
+                }
+                else
+                {
+                    this.MensajeError(rpta);
+                }
+                
+                this.IsNuevo = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+    
+
         private void LlenarComboNroSalas()
         {
             cmbNroSala.DataSource = LcomboSala.MostrarComboSala();
             cmbNroSala.ValueMember = "id_sala";
             cmbNroSala.DisplayMember = "nro_sala";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            this.Habilitar(false);
+        }
+
+        private void BtnEliminarcomp_Click(object sender, EventArgs e)
+        {
+            ListadoDetalles cv = new ListadoDetalles();
+            cv.ShowDialog();
         }
 
         private void LlenarComboFormaPago()
@@ -308,16 +391,27 @@ namespace CapaPresentacion
             this.cmbNroButaca.Text = string.Empty;
             this.cmbFuncion.Text = string.Empty;
             this.txtidecomprobante.Text = string.Empty;
-          }
+
+            this.txtAum.Text = string.Empty;
+            this.textBox5.Text = string.Empty;
+            this.textBox4.Text = string.Empty;
+            this.txtcantMay.Text = string.Empty;
+            this.textBox6.Text = string.Empty;
+            this.txtsin.Text = string.Empty;
+            this.txtDes.Text = string.Empty;
+            this.txttotalventa.Text = string.Empty;
+            this.txtrecaudacion.Text = string.Empty;
+
+
+            this.label19.Text = string.Empty;
+            this.label20.Text = string.Empty;
+            this.label21.Text = string.Empty;
+            this.label54.Text = string.Empty;
+            this.totmaymen.Text = string.Empty;
+        }
 
         private void Habilitar(bool valor)
         {
-            // TEXT BOX
-            
-            this.txtidcliente.ReadOnly = !valor;
-            this.txtcliente.ReadOnly = !valor;
-            this.txtidecomprobante.ReadOnly = !valor;
-            // Combo Box
             this.cmbPelicula.Enabled = valor;
             this.cmbNroSala.Enabled = valor; 
             this.cmbTisala.Enabled = valor;
@@ -328,27 +422,42 @@ namespace CapaPresentacion
             //DATETIMEPICKET
             this.dtpfecha.Enabled = valor;
             //BOTONES
-            this.btnBuscarcliente.Enabled = valor;
             this.btnbuscarcomprobante.Enabled = valor;
+            this.btnCalcular.Enabled = valor;
+           
+            // TEXTBOX
+            this.txtAum.Enabled = valor;
+            this.textBox5.Enabled = valor;
+            this.textBox4.Enabled = valor;
+            this.txtcantMay.Enabled = valor;
+            this.txtidecomprobante.Enabled = valor;
+
         }
+
+        private void Habilitar1(bool valor)
+        {
+            //DATETIMEPICKET
+            this.dtpfecha.Enabled = valor;
+            //BOTONES
+            this.btnBuscarcliente.Enabled = valor;
+            this.btnAgregar.Enabled = valor;
+            this.BtnListado.Enabled = valor;
+        }
+
+
+
 
         private void Botones()
         {
             if (this.IsNuevo)
             {
-                this.Habilitar(true);
                 this.btnNuevo.Enabled = (false);
-                this.btnGuardar.Enabled = (true);
-                
                 this.btnCancelar.Enabled = (true);
 
             }
             else
             {
-                this.Habilitar(false);
                 this.btnNuevo.Enabled = (true);
-                this.btnGuardar.Enabled = (false);
-                
                 this.btnCancelar.Enabled = (false);
             }
 
@@ -384,7 +493,12 @@ namespace CapaPresentacion
             this.MostrarComprobante();
 
             this.Habilitar(false);
+            this.Habilitar1(false);
             this.Botones();
+            this.Limpiar();
+            this.btnGuardar.Enabled = (false);
+            this.btnCalcular.Enabled = (false);
+
         }
         public void Sumar(TextBox uno, TextBox dos, TextBox tres, TextBox respu)
         {
@@ -492,17 +606,18 @@ namespace CapaPresentacion
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-           // if (validar())
+            if (validar())
             {
-            /*  LDetalle_Comprobante Cs = new LDetalle_Comprobante();
-                Cs.= dtpfecha.Value;
-                //Cs.pDia = cmbDia.SelectedIndex + 1;
-                Cs.pFormadepago = cmbPago.SelectedIndex + 1;
-                Cs.pTipodecompra = cmbCompra.SelectedIndex + 1;
-                //Cs.pDia = cmbDia.SelectedIndex + 1;
-                Cs.pTsala = cmbTisala.SelectedIndex + 1;
-                Cs.pMonto = Cs.calcularmonto();
-                //Cs.pCliente = cmbcliente.SelectedIndex + 1;*/
+                this.btnGuardar.Enabled = (true);
+                /*  LDetalle_Comprobante Cs = new LDetalle_Comprobante();
+                    Cs.= dtpfecha.Value;
+                    //Cs.pDia = cmbDia.SelectedIndex + 1;
+                    Cs.pFormadepago = cmbPago.SelectedIndex + 1;
+                    Cs.pTipodecompra = cmbCompra.SelectedIndex + 1;
+                    //Cs.pDia = cmbDia.SelectedIndex + 1;
+                    Cs.pTsala = cmbTisala.SelectedIndex + 1;
+                    Cs.pMonto = Cs.calcularmonto();
+                    //Cs.pCliente = cmbcliente.SelectedIndex + 1;*/
 
                 Au = Convert.ToDouble(txtAum.Text);
                 aumento = LDetalle_Comprobante.calcularmonto() + ((LDetalle_Comprobante.calcularmonto() * Au) / 100);
@@ -534,10 +649,7 @@ namespace CapaPresentacion
                 //    Int32 hora = DateTime.Now.Hour;
 
                 // lblxxx.Text = totalMonto.ToString();
-
-                 
-
-
+                //
                 float descuento = 0;
 
                 if (dtpfecha.Value.DayOfWeek != DayOfWeek.Saturday &&
@@ -589,7 +701,13 @@ namespace CapaPresentacion
                 label32.Text = Math.Round((mayo), 2).ToString();
 
                 txtDes.Text = descuento.ToString();
+
+                lblreca.Text = Math.Round((recaudacion), 2).ToString();
             }
+      
+            
         }
+        
+        
     }
 }

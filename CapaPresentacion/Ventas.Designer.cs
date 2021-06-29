@@ -32,9 +32,11 @@ namespace CapaPresentacion
             this.components = new System.ComponentModel.Container();
             this.ttMensajes = new System.Windows.Forms.ToolTip(this.components);
             this.Erroricono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnListado = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscarcliente = new System.Windows.Forms.Button();
             this.txtidcliente = new System.Windows.Forms.TextBox();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.txtcliente = new System.Windows.Forms.TextBox();
@@ -55,10 +57,13 @@ namespace CapaPresentacion
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblreca = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
+            this.btnbuscarcomprobante = new System.Windows.Forms.Button();
             this.txtidecomprobante = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.lbltotentradas = new System.Windows.Forms.Label();
@@ -117,10 +122,6 @@ namespace CapaPresentacion
             this.label8 = new System.Windows.Forms.Label();
             this.cmbPelicula = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnbuscarcomprobante = new System.Windows.Forms.Button();
-            this.BtnEliminarcomp = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscarcliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Erroricono)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -138,27 +139,18 @@ namespace CapaPresentacion
             // 
             this.Erroricono.ContainerControl = this;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(221, 446);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 10;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(122, 446);
+            this.btnGuardar.Location = new System.Drawing.Point(119, 408);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnEliminarcomp);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnBuscarcliente);
             this.groupBox1.Controls.Add(this.txtidcliente);
@@ -167,18 +159,50 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Location = new System.Drawing.Point(15, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(994, 80);
+            this.groupBox1.Size = new System.Drawing.Size(980, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // BtnListado
+            // 
+            this.BtnListado.Location = new System.Drawing.Point(431, 408);
+            this.BtnListado.Name = "BtnListado";
+            this.BtnListado.Size = new System.Drawing.Size(75, 23);
+            this.BtnListado.TabIndex = 5;
+            this.BtnListado.Text = "Listado ";
+            this.BtnListado.UseVisualStyleBackColor = true;
+            this.BtnListado.Click += new System.EventHandler(this.BtnEliminarcomp_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::CapaPresentacion.Properties.Resources._456;
+            this.btnAgregar.Location = new System.Drawing.Point(567, 29);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(35, 31);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBuscarcliente
+            // 
+            this.btnBuscarcliente.Image = global::CapaPresentacion.Properties.Resources.search32x32;
+            this.btnBuscarcliente.Location = new System.Drawing.Point(491, 26);
+            this.btnBuscarcliente.Name = "btnBuscarcliente";
+            this.btnBuscarcliente.Size = new System.Drawing.Size(47, 36);
+            this.btnBuscarcliente.TabIndex = 3;
+            this.btnBuscarcliente.UseVisualStyleBackColor = true;
+            this.btnBuscarcliente.Click += new System.EventHandler(this.btnBuscarcliente_Click);
             // 
             // txtidcliente
             // 
             this.txtidcliente.Location = new System.Drawing.Point(209, 35);
             this.txtidcliente.Name = "txtidcliente";
+            this.txtidcliente.ReadOnly = true;
             this.txtidcliente.Size = new System.Drawing.Size(34, 20);
-            this.txtidcliente.TabIndex = 3;
+            this.txtidcliente.TabIndex = 1;
             // 
             // dtpfecha
             // 
@@ -186,14 +210,15 @@ namespace CapaPresentacion
             this.dtpfecha.Location = new System.Drawing.Point(49, 35);
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(112, 20);
-            this.dtpfecha.TabIndex = 2;
+            this.dtpfecha.TabIndex = 0;
             // 
             // txtcliente
             // 
             this.txtcliente.Location = new System.Drawing.Point(303, 34);
             this.txtcliente.Name = "txtcliente";
+            this.txtcliente.ReadOnly = true;
             this.txtcliente.Size = new System.Drawing.Size(182, 20);
-            this.txtcliente.TabIndex = 1;
+            this.txtcliente.TabIndex = 2;
             // 
             // label5
             // 
@@ -201,7 +226,7 @@ namespace CapaPresentacion
             this.label5.Location = new System.Drawing.Point(185, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 0;
             this.label5.Text = "ID";
             // 
             // label4
@@ -219,15 +244,15 @@ namespace CapaPresentacion
             this.label3.Location = new System.Drawing.Point(258, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Cliente";
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(22, 446);
+            this.btnNuevo.Location = new System.Drawing.Point(15, 408);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 8;
+            this.btnNuevo.TabIndex = 19;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -274,6 +299,7 @@ namespace CapaPresentacion
             this.dataListado.Size = new System.Drawing.Size(980, 291);
             this.dataListado.TabIndex = 5;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -330,13 +356,13 @@ namespace CapaPresentacion
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.BtnListado);
             this.tabPage2.Controls.Add(this.btnCancelar);
             this.tabPage2.Controls.Add(this.btnCalcular);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.btnNuevo);
             this.tabPage2.Controls.Add(this.btnGuardar);
-            this.tabPage2.Controls.Add(this.btnEditar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -347,20 +373,20 @@ namespace CapaPresentacion
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(398, 446);
+            this.btnCancelar.Location = new System.Drawing.Point(327, 408);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 103;
+            this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(307, 446);
+            this.btnCalcular.Location = new System.Drawing.Point(223, 408);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
-            this.btnCalcular.TabIndex = 102;
+            this.btnCalcular.TabIndex = 21;
             this.btnCalcular.TabStop = false;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -368,6 +394,8 @@ namespace CapaPresentacion
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblreca);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label52);
             this.groupBox2.Controls.Add(this.label53);
             this.groupBox2.Controls.Add(this.label54);
@@ -433,10 +461,28 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(15, 92);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(980, 274);
+            this.groupBox2.Size = new System.Drawing.Size(980, 291);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Venta";
+            // 
+            // lblreca
+            // 
+            this.lblreca.AutoSize = true;
+            this.lblreca.Location = new System.Drawing.Point(926, 252);
+            this.lblreca.Name = "lblreca";
+            this.lblreca.Size = new System.Drawing.Size(13, 13);
+            this.lblreca.TabIndex = 20;
+            this.lblreca.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(824, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Recaudacion $";
             // 
             // label52
             // 
@@ -444,7 +490,7 @@ namespace CapaPresentacion
             this.label52.Location = new System.Drawing.Point(466, 26);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(79, 13);
-            this.label52.TabIndex = 156;
+            this.label52.TabIndex = 0;
             this.label52.Text = "Forma de Pago";
             // 
             // label53
@@ -453,7 +499,7 @@ namespace CapaPresentacion
             this.label53.Location = new System.Drawing.Point(147, 235);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(111, 13);
-            this.label53.TabIndex = 157;
+            this.label53.TabIndex = 0;
             this.label53.Text = "Menores/Mayores  $  ";
             // 
             // label54
@@ -462,7 +508,7 @@ namespace CapaPresentacion
             this.label54.Location = new System.Drawing.Point(112, 235);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(13, 13);
-            this.label54.TabIndex = 154;
+            this.label54.TabIndex = 0;
             this.label54.Text = "0";
             // 
             // label55
@@ -471,15 +517,26 @@ namespace CapaPresentacion
             this.label55.Location = new System.Drawing.Point(27, 235);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(84, 13);
-            this.label55.TabIndex = 155;
+            this.label55.TabIndex = 0;
             this.label55.Text = "Entrada Gral  $  ";
+            // 
+            // btnbuscarcomprobante
+            // 
+            this.btnbuscarcomprobante.Image = global::CapaPresentacion.Properties.Resources.search32x32;
+            this.btnbuscarcomprobante.Location = new System.Drawing.Point(456, 92);
+            this.btnbuscarcomprobante.Name = "btnbuscarcomprobante";
+            this.btnbuscarcomprobante.Size = new System.Drawing.Size(47, 36);
+            this.btnbuscarcomprobante.TabIndex = 14;
+            this.btnbuscarcomprobante.UseVisualStyleBackColor = true;
+            this.btnbuscarcomprobante.Click += new System.EventHandler(this.btnbuscarcomprobante_Click);
             // 
             // txtidecomprobante
             // 
             this.txtidecomprobante.Location = new System.Drawing.Point(347, 101);
             this.txtidecomprobante.Name = "txtidecomprobante";
+            this.txtidecomprobante.ReadOnly = true;
             this.txtidecomprobante.Size = new System.Drawing.Size(91, 20);
-            this.txtidecomprobante.TabIndex = 151;
+            this.txtidecomprobante.TabIndex = 13;
             // 
             // label50
             // 
@@ -487,7 +544,7 @@ namespace CapaPresentacion
             this.label50.Location = new System.Drawing.Point(323, 104);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(18, 13);
-            this.label50.TabIndex = 152;
+            this.label50.TabIndex = 0;
             this.label50.Text = "ID";
             // 
             // lbltotentradas
@@ -496,7 +553,7 @@ namespace CapaPresentacion
             this.lbltotentradas.Location = new System.Drawing.Point(926, 76);
             this.lbltotentradas.Name = "lbltotentradas";
             this.lbltotentradas.Size = new System.Drawing.Size(13, 13);
-            this.lbltotentradas.TabIndex = 147;
+            this.lbltotentradas.TabIndex = 0;
             this.lbltotentradas.Text = "0";
             // 
             // label44
@@ -505,7 +562,7 @@ namespace CapaPresentacion
             this.label44.Location = new System.Drawing.Point(824, 76);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(75, 13);
-            this.label44.TabIndex = 148;
+            this.label44.TabIndex = 0;
             this.label44.Text = "Total entradas";
             // 
             // label41
@@ -514,7 +571,7 @@ namespace CapaPresentacion
             this.label41.Location = new System.Drawing.Point(824, 201);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(87, 13);
-            this.label41.TabIndex = 146;
+            this.label41.TabIndex = 0;
             this.label41.Text = "Total Menores $ ";
             // 
             // label42
@@ -523,7 +580,7 @@ namespace CapaPresentacion
             this.label42.Location = new System.Drawing.Point(926, 201);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(13, 13);
-            this.label42.TabIndex = 145;
+            this.label42.TabIndex = 0;
             this.label42.Text = "0";
             // 
             // label40
@@ -532,7 +589,7 @@ namespace CapaPresentacion
             this.label40.Location = new System.Drawing.Point(824, 226);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(86, 13);
-            this.label40.TabIndex = 144;
+            this.label40.TabIndex = 0;
             this.label40.Text = "Total Mayores $ ";
             // 
             // label39
@@ -541,7 +598,7 @@ namespace CapaPresentacion
             this.label39.Location = new System.Drawing.Point(824, 176);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(76, 13);
-            this.label39.TabIndex = 143;
+            this.label39.TabIndex = 0;
             this.label39.Text = "Total Adulto $ ";
             // 
             // label38
@@ -550,7 +607,7 @@ namespace CapaPresentacion
             this.label38.Location = new System.Drawing.Point(926, 226);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(13, 13);
-            this.label38.TabIndex = 142;
+            this.label38.TabIndex = 0;
             this.label38.Text = "0";
             // 
             // label36
@@ -559,7 +616,7 @@ namespace CapaPresentacion
             this.label36.Location = new System.Drawing.Point(824, 101);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(87, 13);
-            this.label36.TabIndex = 141;
+            this.label36.TabIndex = 0;
             this.label36.Text = "Cantidad Adultos";
             // 
             // label37
@@ -568,7 +625,7 @@ namespace CapaPresentacion
             this.label37.Location = new System.Drawing.Point(926, 101);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(13, 13);
-            this.label37.TabIndex = 140;
+            this.label37.TabIndex = 0;
             this.label37.Text = "0";
             // 
             // label35
@@ -577,7 +634,7 @@ namespace CapaPresentacion
             this.label35.Location = new System.Drawing.Point(824, 126);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(93, 13);
-            this.label35.TabIndex = 139;
+            this.label35.TabIndex = 0;
             this.label35.Text = "Cantidad Menores";
             // 
             // label34
@@ -586,7 +643,7 @@ namespace CapaPresentacion
             this.label34.Location = new System.Drawing.Point(824, 151);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(92, 13);
-            this.label34.TabIndex = 138;
+            this.label34.TabIndex = 0;
             this.label34.Text = "Cantidad Mayores";
             // 
             // label33
@@ -595,7 +652,7 @@ namespace CapaPresentacion
             this.label33.Location = new System.Drawing.Point(926, 126);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(13, 13);
-            this.label33.TabIndex = 137;
+            this.label33.TabIndex = 0;
             this.label33.Text = "0";
             // 
             // label32
@@ -604,7 +661,7 @@ namespace CapaPresentacion
             this.label32.Location = new System.Drawing.Point(926, 151);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(13, 13);
-            this.label32.TabIndex = 136;
+            this.label32.TabIndex = 0;
             this.label32.Text = "0";
             // 
             // label28
@@ -613,7 +670,7 @@ namespace CapaPresentacion
             this.label28.Location = new System.Drawing.Point(926, 176);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(13, 13);
-            this.label28.TabIndex = 135;
+            this.label28.TabIndex = 0;
             this.label28.Text = "0";
             // 
             // label26
@@ -622,7 +679,7 @@ namespace CapaPresentacion
             this.label26.Location = new System.Drawing.Point(926, 51);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(13, 13);
-            this.label26.TabIndex = 131;
+            this.label26.TabIndex = 0;
             this.label26.Text = "0";
             // 
             // label25
@@ -631,7 +688,7 @@ namespace CapaPresentacion
             this.label25.Location = new System.Drawing.Point(824, 26);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(79, 13);
-            this.label25.TabIndex = 134;
+            this.label25.TabIndex = 0;
             this.label25.Text = "Cant de ventas";
             // 
             // label27
@@ -640,7 +697,7 @@ namespace CapaPresentacion
             this.label27.Location = new System.Drawing.Point(824, 51);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(91, 13);
-            this.label27.TabIndex = 132;
+            this.label27.TabIndex = 0;
             this.label27.Text = "suma de entradas";
             // 
             // label24
@@ -649,43 +706,43 @@ namespace CapaPresentacion
             this.label24.Location = new System.Drawing.Point(926, 26);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(13, 13);
-            this.label24.TabIndex = 133;
+            this.label24.TabIndex = 0;
             this.label24.Text = "0";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(527, 193);
+            this.label13.Location = new System.Drawing.Point(567, 193);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 13);
-            this.label13.TabIndex = 130;
+            this.label13.TabIndex = 0;
             this.label13.Text = "Recaudacion  $";
             // 
             // txtrecaudacion
             // 
-            this.txtrecaudacion.Location = new System.Drawing.Point(610, 190);
+            this.txtrecaudacion.Location = new System.Drawing.Point(650, 190);
             this.txtrecaudacion.Name = "txtrecaudacion";
             this.txtrecaudacion.ReadOnly = true;
             this.txtrecaudacion.Size = new System.Drawing.Size(59, 20);
-            this.txtrecaudacion.TabIndex = 129;
+            this.txtrecaudacion.TabIndex = 0;
             this.txtrecaudacion.TabStop = false;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(389, 193);
+            this.label16.Location = new System.Drawing.Point(429, 193);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(73, 13);
-            this.label16.TabIndex = 127;
+            this.label16.TabIndex = 0;
             this.label16.Text = "Total venta  $";
             // 
             // txttotalventa
             // 
-            this.txttotalventa.Location = new System.Drawing.Point(463, 190);
+            this.txttotalventa.Location = new System.Drawing.Point(503, 190);
             this.txttotalventa.Name = "txttotalventa";
             this.txttotalventa.ReadOnly = true;
             this.txttotalventa.Size = new System.Drawing.Size(59, 20);
-            this.txttotalventa.TabIndex = 126;
+            this.txttotalventa.TabIndex = 0;
             this.txttotalventa.TabStop = false;
             // 
             // label47
@@ -694,7 +751,7 @@ namespace CapaPresentacion
             this.label47.Location = new System.Drawing.Point(148, 193);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(75, 13);
-            this.label47.TabIndex = 124;
+            this.label47.TabIndex = 0;
             this.label47.Text = "Sin descuento";
             // 
             // txtsin
@@ -702,26 +759,26 @@ namespace CapaPresentacion
             this.txtsin.Location = new System.Drawing.Point(229, 190);
             this.txtsin.Name = "txtsin";
             this.txtsin.ReadOnly = true;
-            this.txtsin.Size = new System.Drawing.Size(36, 20);
-            this.txtsin.TabIndex = 121;
+            this.txtsin.Size = new System.Drawing.Size(61, 20);
+            this.txtsin.TabIndex = 0;
             this.txtsin.TabStop = false;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(271, 193);
+            this.label46.Location = new System.Drawing.Point(311, 193);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(70, 13);
-            this.label46.TabIndex = 123;
+            this.label46.TabIndex = 0;
             this.label46.Text = "Descuento %";
             // 
             // txtDes
             // 
-            this.txtDes.Location = new System.Drawing.Point(347, 190);
+            this.txtDes.Location = new System.Drawing.Point(387, 190);
             this.txtDes.Name = "txtDes";
             this.txtDes.ReadOnly = true;
             this.txtDes.Size = new System.Drawing.Size(36, 20);
-            this.txtDes.TabIndex = 122;
+            this.txtDes.TabIndex = 0;
             this.txtDes.TabStop = false;
             // 
             // label15
@@ -730,7 +787,7 @@ namespace CapaPresentacion
             this.label15.Location = new System.Drawing.Point(7, 193);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(93, 13);
-            this.label15.TabIndex = 120;
+            this.label15.TabIndex = 0;
             this.label15.Text = "Suma de entradas";
             // 
             // textBox6
@@ -739,7 +796,7 @@ namespace CapaPresentacion
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(36, 20);
-            this.textBox6.TabIndex = 119;
+            this.textBox6.TabIndex = 0;
             this.textBox6.TabStop = false;
             // 
             // label49
@@ -748,7 +805,7 @@ namespace CapaPresentacion
             this.label49.Location = new System.Drawing.Point(9, 150);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(63, 13);
-            this.label49.TabIndex = 118;
+            this.label49.TabIndex = 0;
             this.label49.Text = "Aumento  %";
             // 
             // txtAum
@@ -756,7 +813,7 @@ namespace CapaPresentacion
             this.txtAum.Location = new System.Drawing.Point(78, 147);
             this.txtAum.Name = "txtAum";
             this.txtAum.Size = new System.Drawing.Size(36, 20);
-            this.txtAum.TabIndex = 114;
+            this.txtAum.TabIndex = 15;
             // 
             // lblxxx
             // 
@@ -764,7 +821,7 @@ namespace CapaPresentacion
             this.lblxxx.Location = new System.Drawing.Point(324, 150);
             this.lblxxx.Name = "lblxxx";
             this.lblxxx.Size = new System.Drawing.Size(88, 13);
-            this.lblxxx.TabIndex = 113;
+            this.lblxxx.TabIndex = 0;
             this.lblxxx.Text = "Cant de Menores";
             // 
             // textBox4
@@ -772,7 +829,7 @@ namespace CapaPresentacion
             this.textBox4.Location = new System.Drawing.Point(418, 147);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(36, 20);
-            this.textBox4.TabIndex = 116;
+            this.textBox4.TabIndex = 17;
             // 
             // label14
             // 
@@ -780,7 +837,7 @@ namespace CapaPresentacion
             this.label14.Location = new System.Drawing.Point(120, 151);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 13);
-            this.label14.TabIndex = 112;
+            this.label14.TabIndex = 0;
             this.label14.Text = "Cant de Adultos";
             // 
             // textBox5
@@ -788,7 +845,7 @@ namespace CapaPresentacion
             this.textBox5.Location = new System.Drawing.Point(204, 148);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(36, 20);
-            this.textBox5.TabIndex = 115;
+            this.textBox5.TabIndex = 16;
             // 
             // label17
             // 
@@ -796,7 +853,7 @@ namespace CapaPresentacion
             this.label17.Location = new System.Drawing.Point(246, 150);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 13);
-            this.label17.TabIndex = 111;
+            this.label17.TabIndex = 0;
             this.label17.Text = "Total  $";
             // 
             // label18
@@ -805,7 +862,7 @@ namespace CapaPresentacion
             this.label18.Location = new System.Drawing.Point(460, 151);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 13);
-            this.label18.TabIndex = 110;
+            this.label18.TabIndex = 0;
             this.label18.Text = "Total  $";
             // 
             // label19
@@ -814,7 +871,7 @@ namespace CapaPresentacion
             this.label19.Location = new System.Drawing.Point(292, 150);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(13, 13);
-            this.label19.TabIndex = 109;
+            this.label19.TabIndex = 0;
             this.label19.Text = "0";
             // 
             // label20
@@ -823,7 +880,7 @@ namespace CapaPresentacion
             this.label20.Location = new System.Drawing.Point(506, 151);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(13, 13);
-            this.label20.TabIndex = 108;
+            this.label20.TabIndex = 0;
             this.label20.Text = "0";
             // 
             // label23
@@ -832,7 +889,7 @@ namespace CapaPresentacion
             this.label23.Location = new System.Drawing.Point(540, 151);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(87, 13);
-            this.label23.TabIndex = 107;
+            this.label23.TabIndex = 0;
             this.label23.Text = "Cant de Mayores";
             // 
             // txtcantMay
@@ -840,7 +897,7 @@ namespace CapaPresentacion
             this.txtcantMay.Location = new System.Drawing.Point(633, 147);
             this.txtcantMay.Name = "txtcantMay";
             this.txtcantMay.Size = new System.Drawing.Size(36, 20);
-            this.txtcantMay.TabIndex = 117;
+            this.txtcantMay.TabIndex = 18;
             // 
             // label22
             // 
@@ -848,7 +905,7 @@ namespace CapaPresentacion
             this.label22.Location = new System.Drawing.Point(675, 151);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(43, 13);
-            this.label22.TabIndex = 106;
+            this.label22.TabIndex = 0;
             this.label22.Text = "Total  $";
             // 
             // label21
@@ -857,7 +914,7 @@ namespace CapaPresentacion
             this.label21.Location = new System.Drawing.Point(724, 151);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(13, 13);
-            this.label21.TabIndex = 105;
+            this.label21.TabIndex = 0;
             this.label21.Text = "0";
             // 
             // cmbFuncion
@@ -866,7 +923,7 @@ namespace CapaPresentacion
             this.cmbFuncion.Location = new System.Drawing.Point(159, 100);
             this.cmbFuncion.Name = "cmbFuncion";
             this.cmbFuncion.Size = new System.Drawing.Size(121, 21);
-            this.cmbFuncion.TabIndex = 56;
+            this.cmbFuncion.TabIndex = 12;
             // 
             // label48
             // 
@@ -874,7 +931,7 @@ namespace CapaPresentacion
             this.label48.Location = new System.Drawing.Point(188, 81);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(56, 13);
-            this.label48.TabIndex = 58;
+            this.label48.TabIndex = 0;
             this.label48.Text = "Funciones";
             // 
             // cmbNroButaca
@@ -883,7 +940,7 @@ namespace CapaPresentacion
             this.cmbNroButaca.Location = new System.Drawing.Point(21, 100);
             this.cmbNroButaca.Name = "cmbNroButaca";
             this.cmbNroButaca.Size = new System.Drawing.Size(121, 21);
-            this.cmbNroButaca.TabIndex = 55;
+            this.cmbNroButaca.TabIndex = 11;
             // 
             // label31
             // 
@@ -891,7 +948,7 @@ namespace CapaPresentacion
             this.label31.Location = new System.Drawing.Point(56, 81);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(58, 13);
-            this.label31.TabIndex = 57;
+            this.label31.TabIndex = 0;
             this.label31.Text = "NroButaca";
             // 
             // cmbCompra
@@ -900,7 +957,7 @@ namespace CapaPresentacion
             this.cmbCompra.Location = new System.Drawing.Point(579, 42);
             this.cmbCompra.Name = "cmbCompra";
             this.cmbCompra.Size = new System.Drawing.Size(121, 21);
-            this.cmbCompra.TabIndex = 54;
+            this.cmbCompra.TabIndex = 10;
             // 
             // label6
             // 
@@ -908,7 +965,7 @@ namespace CapaPresentacion
             this.label6.Location = new System.Drawing.Point(599, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 45;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Tipo de compra";
             // 
             // cmbPago
@@ -918,7 +975,7 @@ namespace CapaPresentacion
             this.cmbPago.Location = new System.Drawing.Point(438, 42);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 21);
-            this.cmbPago.TabIndex = 53;
+            this.cmbPago.TabIndex = 9;
             this.cmbPago.ValueMember = "TIPOS_FORMAS_PAGOS";
             // 
             // totmaymen
@@ -927,7 +984,7 @@ namespace CapaPresentacion
             this.totmaymen.Location = new System.Drawing.Point(264, 235);
             this.totmaymen.Name = "totmaymen";
             this.totmaymen.Size = new System.Drawing.Size(13, 13);
-            this.totmaymen.TabIndex = 46;
+            this.totmaymen.TabIndex = 0;
             this.totmaymen.Text = "0";
             // 
             // cmbTisala
@@ -936,7 +993,7 @@ namespace CapaPresentacion
             this.cmbTisala.Location = new System.Drawing.Point(300, 42);
             this.cmbTisala.Name = "cmbTisala";
             this.cmbTisala.Size = new System.Drawing.Size(121, 21);
-            this.cmbTisala.TabIndex = 52;
+            this.cmbTisala.TabIndex = 8;
             // 
             // label7
             // 
@@ -944,7 +1001,7 @@ namespace CapaPresentacion
             this.label7.Location = new System.Drawing.Point(326, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 47;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Tipo de Sala";
             // 
             // cmbNroSala
@@ -953,7 +1010,7 @@ namespace CapaPresentacion
             this.cmbNroSala.Location = new System.Drawing.Point(163, 42);
             this.cmbNroSala.Name = "cmbNroSala";
             this.cmbNroSala.Size = new System.Drawing.Size(121, 21);
-            this.cmbNroSala.TabIndex = 51;
+            this.cmbNroSala.TabIndex = 7;
             // 
             // label8
             // 
@@ -961,7 +1018,7 @@ namespace CapaPresentacion
             this.label8.Location = new System.Drawing.Point(196, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 48;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Sala Nro";
             // 
             // cmbPelicula
@@ -970,7 +1027,7 @@ namespace CapaPresentacion
             this.cmbPelicula.Location = new System.Drawing.Point(18, 42);
             this.cmbPelicula.Name = "cmbPelicula";
             this.cmbPelicula.Size = new System.Drawing.Size(121, 21);
-            this.cmbPelicula.TabIndex = 50;
+            this.cmbPelicula.TabIndex = 6;
             // 
             // label9
             // 
@@ -978,53 +1035,15 @@ namespace CapaPresentacion
             this.label9.Location = new System.Drawing.Point(56, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 49;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Pelicula";
-            // 
-            // btnbuscarcomprobante
-            // 
-            this.btnbuscarcomprobante.Image = global::CapaPresentacion.Properties.Resources.search32x32;
-            this.btnbuscarcomprobante.Location = new System.Drawing.Point(456, 92);
-            this.btnbuscarcomprobante.Name = "btnbuscarcomprobante";
-            this.btnbuscarcomprobante.Size = new System.Drawing.Size(47, 36);
-            this.btnbuscarcomprobante.TabIndex = 153;
-            this.btnbuscarcomprobante.UseVisualStyleBackColor = true;
-            this.btnbuscarcomprobante.Click += new System.EventHandler(this.btnbuscarcomprobante_Click);
-            // 
-            // BtnEliminarcomp
-            // 
-            this.BtnEliminarcomp.Image = global::CapaPresentacion.Properties.Resources._7864;
-            this.BtnEliminarcomp.Location = new System.Drawing.Point(628, 29);
-            this.BtnEliminarcomp.Name = "BtnEliminarcomp";
-            this.BtnEliminarcomp.Size = new System.Drawing.Size(35, 31);
-            this.BtnEliminarcomp.TabIndex = 28;
-            this.BtnEliminarcomp.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::CapaPresentacion.Properties.Resources._456;
-            this.btnAgregar.Location = new System.Drawing.Point(567, 29);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(35, 31);
-            this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnBuscarcliente
-            // 
-            this.btnBuscarcliente.Image = global::CapaPresentacion.Properties.Resources.search32x32;
-            this.btnBuscarcliente.Location = new System.Drawing.Point(491, 26);
-            this.btnBuscarcliente.Name = "btnBuscarcliente";
-            this.btnBuscarcliente.Size = new System.Drawing.Size(47, 36);
-            this.btnBuscarcliente.TabIndex = 11;
-            this.btnBuscarcliente.UseVisualStyleBackColor = true;
-            this.btnBuscarcliente.Click += new System.EventHandler(this.btnBuscarcliente_Click);
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1028, 545);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
@@ -1062,7 +1081,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscarcliente;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtidcliente;
@@ -1137,7 +1155,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button BtnEliminarcomp;
+        private System.Windows.Forms.Button BtnListado;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label lblreca;
+        private System.Windows.Forms.Label label2;
     }
 }

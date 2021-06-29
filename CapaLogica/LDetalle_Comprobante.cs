@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 using CapaDatos;
 
 namespace CapaLogica
@@ -32,7 +32,11 @@ namespace CapaLogica
         
         }
 
-    /*    public static string Insertar_Detalle_Comprobante(double monto, double descuento,
+      
+
+
+
+        public static string Insertar_Detalle_Comprobante(double monto, double descuento,
            int id_funcion, int id_butaca, int id_tipo_compra, int cantidad, int id_pelicula,
            int id_forma_pago, int id_sala, int id_tipo_sala, int id_comprobante)
         {
@@ -51,7 +55,7 @@ namespace CapaLogica
 
 
             return Obj.InsertarDetalleComprobante(Obj);
-        }*/
+        }
 
 
         public static double calcularmonto()
@@ -60,5 +64,18 @@ namespace CapaLogica
            
             return Obj.calcularmonto();
         }
+
+        public static DataTable MostrarDetalle_Comprobante()
+        {
+            return new Ddetalle_Comprobante().Mostrar_Detalle_Comprobante();
+        }
+
+        public static DataTable BuscarDetalleComprobante(string textobuscar)
+        {
+            Ddetalle_Comprobante Obj = new Ddetalle_Comprobante();
+            Obj.Textobuscar = textobuscar;
+            return Obj.BuscarDetalle(Obj);
+        }
+
     }
 }

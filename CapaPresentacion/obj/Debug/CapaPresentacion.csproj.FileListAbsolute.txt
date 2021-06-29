@@ -47,3 +47,4 @@ C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debu
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.VistaCliente.resources
 C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.VistaComprobante.resources
+C:\Users\Carlos\Desktop\Mis Cosas\todo\Cinemax\Cinemax\CapaPresentacion\obj\Debug\CapaPresentacion.ListadoDetalles.resources
