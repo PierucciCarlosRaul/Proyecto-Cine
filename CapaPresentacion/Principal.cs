@@ -13,12 +13,10 @@ namespace CapaPresentacion
     public partial class Principal : Form
     {
         private int childFormNumber = 0;
-
         public string id_personal = "";
         public string nombre = "";
         public string acceso = "";
         
-
         public Principal()
         {
             InitializeComponent();
@@ -156,8 +154,6 @@ namespace CapaPresentacion
                 this.adminpersonal.Enabled = false;
             }
             else {
-
-
                 this.sistema.Enabled = true;
                 this.herramientas.Enabled = false;
                 this.ventanas.Enabled = false;
@@ -168,11 +164,6 @@ namespace CapaPresentacion
                 this.consultas.Enabled = false;
                 this.adminpersonal.Enabled = false;
             }
-        
-        
-        
-        
-        
         }
 
         private void comprobanteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,6 +179,11 @@ namespace CapaPresentacion
         {
             Registrar_Clientes frm = new Registrar_Clientes();
             frm.Show();
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -31,7 +31,6 @@ namespace CapaDatos
                 this.id_clasificacion = 0;
                 this.id_calificacion = 0;
                 this.id_genero = 0;
-            
                 this.textobuscar = "";
             }
 

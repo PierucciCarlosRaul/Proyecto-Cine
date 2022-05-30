@@ -13,7 +13,7 @@ namespace CapaPresentacion
 {
     public partial class Ventas : Form{
         private bool IsNuevo;
-        private DataTable dtDetalle;
+        
         private static Ventas _instancia;
 
         public static Ventas GetInstancia()
@@ -323,6 +323,20 @@ private void LlenarComboTipoSalas()
         {
             ListadoDetalles cv = new ListadoDetalles();
             cv.ShowDialog();
+        }
+
+       
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ComprobanterReporte_Frm frm = new ComprobanterReporte_Frm();
+            frm.idComprobante = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+            frm.ShowDialog();
+        }
+
+        private void BtnListar_Click(object sender, EventArgs e)
+        {
+            this.MostrarComprobante();
         }
 
         private void LlenarComboFormaPago()

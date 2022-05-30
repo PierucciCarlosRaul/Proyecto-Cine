@@ -199,6 +199,7 @@
             this.btnSiguiente.TabIndex = 11;
             this.btnSiguiente.Text = "Siguiente >>";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnVolver
             // 
@@ -208,6 +209,7 @@
             this.btnVolver.TabIndex = 12;
             this.btnVolver.Text = "<< Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnNuevo
             // 

@@ -104,6 +104,7 @@ namespace CapaPresentacion
         
             btnEditar.Enabled = false;
             btnBorrarCliente.Enabled = true;
+            btnSiguiente.Enabled = false;
 
 
         }
@@ -161,7 +162,7 @@ namespace CapaPresentacion
                         Convert.ToInt32(this.cmbCliente.SelectedValue),
                         this.txtTelefono.Text, this.txtEmail.Text);
                 }
-
+                btnSiguiente.Enabled = true;
                 if (rpta.Equals("OK"))
                 {
                     if (this.IsNuevo)
@@ -323,6 +324,23 @@ namespace CapaPresentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            Ventas frm = new Ventas();
+            
+            frm.Show();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Principal frm = new Principal();
+            
+            frm.Show();
+
+           
+
         }
     }
 }

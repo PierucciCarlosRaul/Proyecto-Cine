@@ -280,21 +280,21 @@ namespace CapaPresentacion
             // realizarVentasToolStripMenuItem
             // 
             this.realizarVentasToolStripMenuItem.Name = "realizarVentasToolStripMenuItem";
-            this.realizarVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.realizarVentasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.realizarVentasToolStripMenuItem.Text = "Realizar ventas";
             this.realizarVentasToolStripMenuItem.Click += new System.EventHandler(this.realizarVentasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // comprobanteToolStripMenuItem
             // 
             this.comprobanteToolStripMenuItem.Name = "comprobanteToolStripMenuItem";
-            this.comprobanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comprobanteToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.comprobanteToolStripMenuItem.Text = "Comprobante";
             this.comprobanteToolStripMenuItem.Click += new System.EventHandler(this.comprobanteToolStripMenuItem_Click);
             // 
@@ -334,6 +334,7 @@ namespace CapaPresentacion
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
