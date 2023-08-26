@@ -15,7 +15,7 @@ namespace CapaPresentacion
         private bool IsNuevo;
         
         private static Ventas _instancia;
-
+        
         public static Ventas GetInstancia()
         {
 
@@ -25,6 +25,7 @@ namespace CapaPresentacion
             }
             return _instancia;
         }
+        
         public int id_trabajador;
         int ce;
         double totalMonto, totadu, totmeno, totmayo, recaudacion, menores, adultos,res,
@@ -672,16 +673,17 @@ private void LlenarComboTipoSalas()
                 {
                     descuento += 0.05F;
                 }
-            /*    if (f == 3)
-                {
-                    descuento += 0.05F;
-                }
-             /*   if (c == 1)
-                    descuento += 0.05F;
+                /*    if (f == 3)
+                    {
+                        descuento += 0.05F;
+                    }
+                 /*   if (c == 1)
+                        descuento += 0.05F;
 
-             /*   if (Cs.pTsala == 1)
-                    descuento += 0.05F;*/
+                 /*   if (Cs.pTsala == 1)
+                        descuento += 0.05F;*/
 
+                
 
                 totalMonto = totalMonto * (1 - descuento);
 

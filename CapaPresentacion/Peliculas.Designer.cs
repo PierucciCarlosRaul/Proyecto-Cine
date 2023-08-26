@@ -220,7 +220,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox1.BackgroundImage = global::CapaPresentacion.Properties.Resources.cine_5_e1585960007845;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 97);
             this.pictureBox1.TabIndex = 22;
